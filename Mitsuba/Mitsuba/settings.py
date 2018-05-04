@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'HardwareControl.apps.HardwarecontrolConfig'
 ]
 
 MIDDLEWARE = [
@@ -75,9 +76,16 @@ WSGI_APPLICATION = 'Mitsuba.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'MS0518',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': 'DESKTOP-PQHF1PQ\SQLEXPRESS',
+        'PORT': '',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 13 for SQL Server',
+            }
+    },
 }
 
 
